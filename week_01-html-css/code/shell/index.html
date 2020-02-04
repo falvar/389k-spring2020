@@ -3,10 +3,47 @@
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
         <style>
-            
+            #greenh1 {
+              color: green;
+              font-size: 100px;
+            }
+            .pink {
+              color: pink;
+            }
+            li{
+              display: inline;
+              padding: 0px 10px 0px 10px;
+              font-size: 20px;
+            }
+
+            @media (max-width: 1000px) {
+              #greenh1 {
+                font-size: 24px;
+              }
+              .pink{
+                font-size: 20px;
+              }
+            }
         </style>
     </head>
     <body>
-        
+        <h1 id="greenh1">Last First Day of College</h1>
+        <h1>This should not be green</h1>
+        <h2 class="pink">Friday</h2>
+        <h3 class="pink"> 11 </h3>
+        <ul>
+          <li><a href="google.com">Home</a></li>
+          <li><a href="facebook.com">About</a></li>
+          <li><a href="yahoo.com">Contact Us</a></li>
+        </ul>
+        <p>How <b>weird</b> Symmons hall is
+        You can check it out
+        <a href="https://cmns.umd.edu/undergraduate/advising-academic-planning/office-student-services">here</a></p>
+        <img src="https://images.squarespace-cdn.com/content/v1/530b693ce4b01ddda83c8078/1398177572312-FFH3VECVH8LX688DQ0UU/ke17ZwdGBToddI8pDm48kPnvfHcoVmIZmkIUW9cGZrFZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpwgLcepFf1K4E3R7fMxAXbiji0QU86yIZEQHyLD_l84NHcdmCmDFCQ9iD9Nikswl_Q/symons_hall_2.jpg">
+
+        <form>
+          <input type="text" name="FirstName">
+          <button type="submit" value="button">Submit</button>
+        </form>
     </body>
 </html>
