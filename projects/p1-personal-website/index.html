@@ -1,3 +1,52 @@
 <!-- We have purposely given you an empty file. We want you to get some practice with creating all the tags from the ground up.
  -->
+ <!DOCTYPE html>
+ <html>
+     <head>
+        <style>
+            body{
+                background-color: #FFABAB;
+            }
+
+            h1{
+                color: white;
+                text-align: center;
+                font-size: 75px;
+                font: sans-serif;
+                top: 30%;
+                left: 50%;
+                position: absolute;
+                transform: translateX(-50%) translateY(-30%);
+            }
+
+            .tabs{
+              display: inline-block;
+              padding: 0px 10px 0px 10px;
+              font-size: 25px;
+              text-decoration: none;
+              color: white;
+              padding: 20px;
+              left: 50%;
+              text-align: center;
+            }
+
+            @media only screen and (max-width: 700px) {
+                body {
+                    background-color: lightblue;
+                }
+            }
+        </style>
+     </head>
+
+     <body>
+        <h1>
+            Fatima Alvarado
+        </h1>
+
+        <ul>
+            <li class="tabs"><a href="./about.html" class="tabs">About</a></li>
+            <li class="tabs"><a href="https://snake.googlemaps.com" class="tabs">Study Break</a></li>
+        </ul>
+     </body>
+ </html>
 
