@@ -8,13 +8,64 @@
 	<h1>Hello World</h1> 	
 
 	<script>
-		
+		// console.log("hello world");
 
 		// Arrays
+		var names = ['Robert', 'Camile'];
+
 
 		// For Loops
+		for(let i = 0; i < names.length; i++){
+			// console.log(names[i]);
+		}
+		//for each:
+		for(let n of names){
+			// console.log(n);
+		}
 
 		// First class Functions
+		function add(x, y){
+			return x + y;
+		}
+		// console.log(add(5,2));
+
+		function rev(name){
+			return name.split('').reverse().join('');
+		}
+		// console.log(rev("hello"));
+
+		// Anonymous Functions
+		let funcs = [function(){console.log("hi")}, function(){console.log("bye")}];
+
+		// Objects
+		var person = {
+			age: 20,
+			occupation: "student",
+			sayHello: function(){
+				console.log("hi")
+			},
+			saySomething: function(say){
+				console.log(say);
+			}
+		}
+		console.log(person.keys);
+		person.saySomething("bye");
+
+		// EXERCISE 
+
+		//returns an arr of objs that hold an unique name & password
+		function passwords(users, pass){
+			var objs = [];
+			for(let i = 0; i < users.length; i++){
+				objs[i] = {username: users[i], password: pass[i]};
+			}
+			return objs;
+		}
+		console.log(passwords(["Cammie", "Chidi", "Chirag"], ["5#gss", "890ssa", "amso01"]))
+
+		function editKeys(animals){
+			//for(let k of animals.keys)
+		}
 
 	</script>
 
