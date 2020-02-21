@@ -22,12 +22,41 @@
     </header>
     <article>
         <h3>Search Category:</h3>
-        <input type="text" placeholder="Ex: Animal">
-        <button>Search! </button>
-        <button> Clear Results </button>
+        <input type="text" placeholder="Ex: Animal" id="category_field">
+        <button id="search_button">Search! </button>
+        <button id="clear_results"> Clear Results </button>
+        <div id="results_container"></div>
     </article>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
     <script>
+        // capturing:
+        var tags = $("#search_button");
+        console.log(tags);
+
+        // event listeners
+        $("#search_button").on("click", function(){
+           // alert("search button was clicked")
+            var input = $("#category_field").val()
+            // alert(input);
+            // $("#results_container").append("<h3>" + input + "</h3>")
+
+            $.get("https://api.umd.io/v0/courses/" + input, function(data, error){
+                $("#results_container").append("<h3>" + input + "</h3>");
+                $("#results_container").append(`<p> ${data.description} </h3>`);
+                // $("#results_container").append("<p>" + data.description + "</p>");
+                //alert(data.description);
+
+                if(error){
+                    alert("course doesn't exist")
+                }
+            })
+
+        })
+
+        $("#clear_results").on("click", function(){
+            $("#category_field").val("");
+            $("#results_container").empty();
+        })
     </script>
 </body>
 
