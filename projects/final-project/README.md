@@ -1,86 +1,133 @@
-# Final Project
-#### Out: 4/13/20 | Deadline: 5/8/20 11:59 PM
+ 
+# Recipe Collective
 
-### Overview
+---
 
-In this project, you will work on a project to tie together everything you have learned up to now in the semester.
+Name: Fatima Alvarado 
 
-### Objectives
+Date: 04/29/20
 
-The purpose of this project is to create a fully functioning **"real-time application"**.
+Project Topic: Recipes
 
-This project is largely open ended. The only requirement is to satisfy all parts of the `Specifications` section below, which are broad and flexible. Outside of that, you are free to be creative and make something you are proud of. You may choose to do the same topic as you did for your midterm, or choose something different.
+URL: 
 
-### Grading
-
-You fill submit both the application source as well as a `documentation.md` file that documents how you implemented each part of the project.
-
-Grading will be done using the `documentation.md` file to test your application.
-
-Each specificiation has two types of requirements:
-- (REQ): These are requirements **must** be followed. Failue to do so can result in up to 50% point deductions for the entire project.
-- (X pt): These specifications are worth X points.
+---
 
 
-### Specifications
+### 1. Data Format and Storage
+
+Recipe Schema fields:
+- `Field 1`:     Title       `Type: String`
+- `Field 2`:     User       `Type: String`
+- `Field 3`:     Calories       `Type: Number`
+- `Field 4`:     Instructions       `Type: String`
+- `Field 5`:     Reviews       `Type: [reviewSchema]
+
+Recipe Schema: 
+```javascript
+{
+  title: String,
+  calories: Number,
+  instructions: String,
+  user: String,
+  reviews: [reviewSchema]
+}
+```
+
+Review Schema fields:
+- `Field 1`:     Rating       `Type: Number between 0.0-5.0`
+- `Field 2`:     Comment       `Type: String`
+- `Field 3`:     User       `Type: String`
+
+Review Schema: 
+```javascript
+{
+  rating: Number,
+  comment: String,
+  user: String,
+}
+```
+
+### 2. Add New Data
+
+HTML form route: `/addRecipe`
+
+POST endpoint route: `/api/addRecipe`
+
+Example Node.js POST request to endpoint: 
+```javascript
+var request = require("request");
+
+var options = { 
+    method: 'POST',
+    url: 'http://localhost:3000/addRecipe',
+    headers: { 
+        'content-type': 'application/x-www-form-urlencoded' 
+    },
+    form: { 
+      title: "Macaroons",
+      calories: 90,
+      instructions: "Make batter, shape and bake",
+      user: "Pierre,
+      reviews: []
+    } 
+};
+```
+
+POST endpoint route: `/recipe/:id/addReview`
+
+Example Node.js POST request to endpoint: 
+```javascript
+var request = require("request");
+
+var options = { 
+    method: 'POST',
+    url: 'http://localhost:3000/recipe/:id/addReview',
+    headers: { 
+        'content-type': 'application/x-www-form-urlencoded' 
+    },
+    form: { 
+      rating: 4.5,
+      comment: "Completely not ever done before",
+      user: "LGaga",
+    } 
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+
+### 3. View Data
+
+GET endpoint route: `/getRecipes`
+
+### 4. Search Data
+
+Search Field: Title
+
+### 5. Delete Data
+
+DELETE endpoint route: `/recipe/:id`
+
+DELETE endpoint route: `/recipe/:id/review/last`
+
+### 6. Extra Enpoints
+
+GET endpoint route: `/email/:id/:email`
+This sends the recipe with specified id to the specified email using Nodemailer
+
+GET endpoint route: `/sendAll/:email`
+This sends a PDF of all recipes in the database to the specified email using PDFkit and Nodemailer
+
+### 7. New Module
+
+Created a module in share.js that initializes and creates a PDF using PDFkit
+
+### 8. New NPM Packages
+
+Used PDFkit and Nodemailer.
 
 
-1. **Fulfillment of Midterm Project Requirements**
-
-    - (REQ) (50 pt) Data should be stored using MongoDB, instead of similar to how the Pokemon API and the blog engine was set up
-    - Have at least 2 different schemas
-
-
-2. **Live Updates**
-
-    Users will need to be able to add data to your local storage, and have live updates and a notification system.
-
-    - (10 pt) Incorporate sockets.
-
-3. **View Data**
-
-    Users should be able to view all data in two ways:
-
-    - (REQ) The HTML pages should be generated using Handlebars
-    - (10 pt) Handlebars.js should be used to generate at least 5 pages,
-              including a form submission page for your respective entity
-    - (5 pt) Have a (6th) description about page, which includes your name
-        and description of the application.
-
-4. **API**
-
-    Use express.js to have at least 8 different endpoints
-
-    - (10 pt) At least 2 post endpoints
-    - (10 pt) At least 2 delete endpoints
-
-4. **Modules**
-
-    Create at least 1 module (to separate functionality from backend API functionality)
-
-    - (15 pt) Create at least 1 module
-
-5. **NPM Packages**
-
-    - (15 pt) Use 2 new npm packages that we have not used before
-
-6. **User Interface**
-
-    - (10 pt) Make it look nice
-
-7. **Deployment**
-
-    - (5 pt) Deploy to the web (either Heroku or Now) - If you can't figure out
-    deployment, email us and we'll figure something out
-
-8. **README**
-
-    - (5 pt) Create a README with all the specifications
-
-### Submission
-
-We will be Heroku [Heroku](http://heroku.com) to submit one link per project.
-
-At the top of your project, include the **Heroku link** (ex: https://myapp.herokuapp.com) at the top of your `documentation.md` file.
-
-Submit just the `documentation.md` file to the submit server.

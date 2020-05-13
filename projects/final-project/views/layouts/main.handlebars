@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <title>Recepies for All</title>
+  <link rel="stylesheet" type="text/css" href="/public/css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    {{>nav}}
+    {{{body}}}
+  </div>
+  <script>
+    var count = 0;
+    var input = $("#search").keyup(function () {
+      
+      var val = $(this).val().toLowerCase();
+      $("article").each(function (i) {
+        if ($(this).find("h2")[0].innerText.toLowerCase().includes(val) === false) {
+          $(this).hide();
+          count ++;
+        }
+      })
+      if($('#recs > :hidden').length === $("article").length){
+          $("#recentUps").append("<p>No Results :(</p>")
+      }
+    });
+    
+  </script>
+</body>
+
+</html>

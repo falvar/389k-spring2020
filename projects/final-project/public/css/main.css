@@ -1,0 +1,108 @@
+/****************
+      GLOBAL 
+*****************/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color:#FDFBF3;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/****************
+      MAIN 
+*****************/
+
+h1 {
+    font-weight: 700;
+}
+
+article {
+    padding: 10px;
+    background-color:#DDEEFA;
+    margin-bottom: 30px;
+}
+
+.nav .tag {
+    padding: 10px;
+    background-color: #024170;
+    display: inline;
+    font-weight: bold;
+    color: white;
+    border-radius: 12px;
+}
+
+p{
+    font-weight: bold;
+    size: 16px;
+}
+
+
+/****************
+      FORM 
+*****************/
+
+.input-field {
+    padding: 10px 0;
+}
+
+label {
+    display: block;
+    padding-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+textarea {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80%;
+}
+
+button {
+	border: none;
+	padding: 10px;
+	background-color: #024170;
+	color: white;
+	font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+
+/****************
+    BLOG POST 
+*****************/
+
+.title-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.title {
+    display: inline;
+    margin-right: 20px;
+}
+
+.content {
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+    background-color:#f68c98;
+    color: white;
+}
+
+.content a {
+    color: white;
+}

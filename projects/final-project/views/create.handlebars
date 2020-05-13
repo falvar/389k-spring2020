@@ -1,0 +1,22 @@
+<h1>Add New Recipe</h1>
+<article>
+    <form method="POST" action="/addRecipe">
+        <div class="input-field">
+            <label>Recipe Title:</label>
+            <input type="text" name="title" size="50" placeholder="Recipe Title...">
+        </div>
+         <div class="input-field">
+            <label>User:</label>
+            <input type="text" name="user" size="50" placeholder="user-name">
+        </div>
+        <div class="input-field">
+            <label>Calories:</label>
+            <input type="text" name="calories" size="50" placeholder="500...">
+        </div>
+        <div class="input-field">
+            <label>Instructions:</label>
+            <textarea type="text" name="instructions" rows="20" placeholder="Ingredients..."></textarea>
+        </div>
+        <button type="submit">Add Recipe </button>
+    </form>
+</article>
